@@ -31,7 +31,7 @@ class MyEventTest1 extends JFrame implements ActionListener{
 	JCheckBox ch[];
 	JRadioButton rbt[];
 	ButtonGroup gr;
-	String fruit[] = {"¹Ù³ª³ª","Æ÷µµ","Åä¸¶Åä","¼ö¹Ú","Âü¿Ü"};
+	String fruit[] = {"ë°”ë‚˜ë‚˜","í¬ë„","í† ë§ˆí† ","ìˆ˜ë°•","ì°¸ì™¸"};
 	JComboBox<String> combo;
 	
 	MyEventTest1(){
@@ -50,46 +50,46 @@ class MyEventTest1 extends JFrame implements ActionListener{
 			@Override
 			public void mouseMoved(MouseEvent e) {
 				// TODO Auto-generated method stub
-				ta.append("mouseMoved ½ÇÇà\n");
+				ta.append("mouseMoved ì‹¤í–‰\n");
 			}
 			
 			@Override
 			public void mouseDragged(MouseEvent e) {
 				// TODO Auto-generated method stub
-				ta.append("mouseDragged ½ÇÇà\n");
+				ta.append("mouseDragged ì‹¤í–‰\n");
 			}
 		});
 		tf.addMouseWheelListener(new MouseWheelListener() {
 			@Override
 			public void mouseWheelMoved(MouseWheelEvent e) {
 				// TODO Auto-generated method stub
-				ta.append("mouseWheelMoved ½ÇÇà\n");
+				ta.append("mouseWheelMoved ì‹¤í–‰\n");
 			}
 		});
 		tf.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				ta.append("mouseReleased ½ÇÇà\n");
+				ta.append("mouseReleased ì‹¤í–‰\n");
 			}
 			
 			@Override
 			public void mousePressed(MouseEvent e) {
-				ta.append("mousePressed ½ÇÇà\n");
+				ta.append("mousePressed ì‹¤í–‰\n");
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				ta.append("mouseExited ½ÇÇà\n");
+				ta.append("mouseExited ì‹¤í–‰\n");
 			}
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				ta.append("mouseEntered ½ÇÇà\n");
+				ta.append("mouseEntered ì‹¤í–‰\n");
 			}
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ta.append("mouseClicked ½ÇÇà X:"+e.getX()+"   Y: "+e.getY()+"\n");
+				ta.append("mouseClicked ì‹¤í–‰ X:"+e.getX()+"   Y: "+e.getY()+"\n");
 			}
 		});
 		tf.addFocusListener(new FocusListener() {
@@ -97,13 +97,13 @@ class MyEventTest1 extends JFrame implements ActionListener{
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
-				ta.append("Æ÷Ä¿½º¸¦ ÀÒ¾ú½À´Ï´Ù\n");
+				ta.append("í¬ì»¤ìŠ¤ë¥¼ ìƒì—ˆìŠµë‹ˆë‹¤\n");
 			}
 			
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				ta.append("Æ÷Ä¿½º¸¦ ¾ò¾ú½À´Ï´Ù\n");
+				ta.append("í¬ì»¤ìŠ¤ë¥¼ ì–»ì—ˆìŠµë‹ˆë‹¤\n");
 			}
 		});
 		ta.addKeyListener(new KeyListener() {
@@ -111,13 +111,13 @@ class MyEventTest1 extends JFrame implements ActionListener{
 			@Override
 			public void keyTyped(KeyEvent e) {
 				// TODO Auto-generated method stub
-				ta.append(e.getKeyChar()+"ÀÔ·Â\n");
+				ta.append(e.getKeyChar()+"ì…ë ¥\n");
 			}
 			
 			@Override
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
-				ta.append(e.getKeyChar()+"¶¼¾úÀ½\n");
+				ta.append(e.getKeyChar()+"ë–¼ì—ˆìŒ\n");
 			}
 			
 			@Override
@@ -128,7 +128,7 @@ class MyEventTest1 extends JFrame implements ActionListener{
 		});
 		ch = new JCheckBox[5];
 		for(int i=0;i<ch.length;i++) {
-			ch[i]=new JCheckBox((i+1)+"¹ø");
+			ch[i]=new JCheckBox((i+1)+"ë²ˆ");
 		}
 		
 		jp = new JPanel();
@@ -256,7 +256,7 @@ class MyEventTest1 extends JFrame implements ActionListener{
 		add(jp);
 		setSize(500,500);
 		setVisible(true);
-		setTitle("³»°¡¸¸µç¹öÆ°");
+		setTitle("ë‚´ê°€ë§Œë“ ë²„íŠ¼");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	@Override

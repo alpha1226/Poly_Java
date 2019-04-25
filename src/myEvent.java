@@ -15,16 +15,16 @@ import javax.swing.JTextField;
 public class myEvent {
 public static void main(String[] args) {EventTest01 et = new EventTest01();et.onView();}}
 class EventTest01 extends JFrame implements ActionListener {
-	JButton jb,yellow,pink,clear;JPanel jp;JTextArea ta;JTextField tf;JCheckBox ch[];JRadioButton rb[];ButtonGroup bg;JComboBox<String> combo;String fruit[] = {"¹Ù³ª³ª","Æ÷µµ","Åä¸¶Åä","¼ö¹Ú","Âü¿Ü"};
+	JButton jb,yellow,pink,clear;JPanel jp;JTextArea ta;JTextField tf;JCheckBox ch[];JRadioButton rb[];ButtonGroup bg;JComboBox<String> combo;String fruit[] = {"ë°”ë‚˜ë‚˜","í¬ë„","í† ë§ˆí† ","ìˆ˜ë°•","ì°¸ì™¸"};
 	public EventTest01() {
 		jp = new JPanel();
-		jb = new JButton("¹öÆ°");
+		jb = new JButton("ë²„íŠ¼");
 		yellow = new JButton("yellow");
 		pink = new JButton("pink");
-		clear = new JButton("clear");ta= new JTextArea(10,40);tf=new JTextField(40);ch = new JCheckBox[5];rb = new JRadioButton[3];bg=new ButtonGroup();combo=new JComboBox<>(fruit);//¼±¾ğ
-		jb.addActionListener(this);yellow.addActionListener(this);pink.addActionListener(this);clear.addActionListener(this);tf.addActionListener(this);//¾×¼Ç¸®½º³Ê
-		jp.setBackground(Color.CYAN);jp.add(jb);jp.add(yellow);jp.add(pink);jp.add(clear);jp.add(ta);jp.add(tf);for(int i=0;i<ch.length;i++) {ch[i]=new JCheckBox(i+1+"¹ø");jp.add(ch[i]);ch[i].addActionListener(this);}for(int i = 0;i<rb.length;i++) {rb[i] = new JRadioButton(); rb[i].addActionListener(this); bg.add(rb[i]);jp.add(rb[i]);}add(jp);rb[0].setText("male");rb[1].setText("female");rb[2].setText("other");jp.add(combo);combo.addActionListener(this);//Ãß°¡
+		clear = new JButton("clear");ta= new JTextArea(10,40);tf=new JTextField(40);ch = new JCheckBox[5];rb = new JRadioButton[3];bg=new ButtonGroup();combo=new JComboBox<>(fruit);//ì„ ì–¸
+		jb.addActionListener(this);yellow.addActionListener(this);pink.addActionListener(this);clear.addActionListener(this);tf.addActionListener(this);//ì•¡ì…˜ë¦¬ìŠ¤ë„ˆ
+		jp.setBackground(Color.CYAN);jp.add(jb);jp.add(yellow);jp.add(pink);jp.add(clear);jp.add(ta);jp.add(tf);for(int i=0;i<ch.length;i++) {ch[i]=new JCheckBox(i+1+"ë²ˆ");jp.add(ch[i]);ch[i].addActionListener(this);}for(int i = 0;i<rb.length;i++) {rb[i] = new JRadioButton(); rb[i].addActionListener(this); bg.add(rb[i]);jp.add(rb[i]);}add(jp);rb[0].setText("male");rb[1].setText("female");rb[2].setText("other");jp.add(combo);combo.addActionListener(this);//ì¶”ê°€
 	}
-	public void onView() {setResizable(false);setSize(500,400);setVisible(true);setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);}//±âº» ºä
-	public void actionPerformed(ActionEvent e) {if(e.getSource() == jb) System.exit(0);else if(e.getSource()==yellow)jp.setBackground(Color.yellow);else if(e.getSource()==pink)jp.setBackground(Color.PINK);else if(e.getSource()==clear)ta.setText("");else if(e.getSource()==tf) {ta.append(tf.getText() + '\n');tf.setText("");} for(int i =0;i<ch.length;i++) {if(e.getSource()==ch[i]) {if(ch[i].isSelected()) {ta.append(ch[i].getText()+"¼±ÅÃµÇ¾ú½À´Ï´Ù.\n");}else {ta.append(ch[i].getText()+"ÇØÁ¦µÇ¾ú½À´Ï´Ù.\n");}}} for(int i = 0; i<rb.length;i++) { if(e.getSource()==rb[i]) {ta.append(rb[i].getText()+" ¼±ÅÃ\n");}} if(e.getSource()==combo) {ta.append(combo.getSelectedItem().toString()+"\n");}}//ÀÍ¼Ç¸®½º³Ê
+	public void onView() {setResizable(false);setSize(500,400);setVisible(true);setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);}//ê¸°ë³¸ ë·°
+	public void actionPerformed(ActionEvent e) {if(e.getSource() == jb) System.exit(0);else if(e.getSource()==yellow)jp.setBackground(Color.yellow);else if(e.getSource()==pink)jp.setBackground(Color.PINK);else if(e.getSource()==clear)ta.setText("");else if(e.getSource()==tf) {ta.append(tf.getText() + '\n');tf.setText("");} for(int i =0;i<ch.length;i++) {if(e.getSource()==ch[i]) {if(ch[i].isSelected()) {ta.append(ch[i].getText()+"ì„ íƒë˜ì—ˆìŠµë‹ˆë‹¤.\n");}else {ta.append(ch[i].getText()+"í•´ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n");}}} for(int i = 0; i<rb.length;i++) { if(e.getSource()==rb[i]) {ta.append(rb[i].getText()+" ì„ íƒ\n");}} if(e.getSource()==combo) {ta.append(combo.getSelectedItem().toString()+"\n");}}//ìµì…˜ë¦¬ìŠ¤ë„ˆ
 }
