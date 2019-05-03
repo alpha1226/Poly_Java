@@ -30,7 +30,7 @@ class Buttons extends JFrame{
 		setLayout(new GridLayout(0,3,10,10));
 		setSize(300,300);
 		setVisible(true);
-		setTitle("³»°¡¸¸µç ¹öÆ°µé");
+		setTitle("ë‚´ê°€ë§Œë“  ë²„íŠ¼ë“¤");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }

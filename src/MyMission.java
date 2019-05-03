@@ -15,17 +15,14 @@ import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
-public class MyMission {
+public class MyMission{
 	public static void main(String[] args) {
-		
-		
-		        
 		Mission m1 = new Mission();
-		m1.display();
 		m1.makeMenu();
-		
+		m1.display();
 	}
 }
+
 
 class Mission extends JFrame {
 	
@@ -45,34 +42,34 @@ class Mission extends JFrame {
 	
 	Mission(){
 		mb = new JMenuBar();
-		mFile = new JMenu("ÆÄÀÏ(F)");
-		mEdit = new JMenu("ÆíÁı(E)");
-		mOper = new JMenu("¼­½Ä(O)");
-		mView = new JMenu("º¸±â(V)");
-		mHelp = new JMenu("µµ¿ò¸»(H)");
-		miNew = new JMenuItem("»õ·Î¸¸µé±â");
-		miOpen = new JMenuItem("¿­±â");
-		miDown = new JMenuItem("ÀúÀå");
-		miADown = new JMenuItem("´Ù¸¥ÀÌ¸§À¸·Î ÀúÀå");
-		miPageset = new JMenuItem("ÆäÀÌÁö¼³Á¤");
-		miPrint = new JMenuItem("ÀÎ¼â");
-		miQuit = new JMenuItem("³¡³»±â");
-		miUndo = new JMenuItem("½ÇÇàÃë¼Ò");
-		miCut = new JMenuItem("Àß¶ó³»±â");
-		miCopy = new JMenuItem("º¹»ç");
-		miPaste = new JMenuItem("ºÙ¿©³Ö±â");
-		miDel = new JMenuItem("»èÁ¦");
-		miFind = new JMenuItem("Ã£±â");
-		miNFind = new JMenuItem("´ÙÀ½Ã£±â");
-		miChange = new JMenuItem("¹Ù²Ù±â");
-		miMove = new JMenuItem("ÀÌµ¿");
-		miAlSel = new JMenuItem("ÀüÃ¼¼±ÅÃ");
-		miDate = new JMenuItem("½Ã°£/³¯Â¥");
-		miNextLine = new JMenuItem("ÀÚµ¿ÁÙ¹Ù²Ş");
-		miGol = new JMenuItem("±Û²Ã");
-		miState = new JMenuItem("»óÅÂÇ¥½ÃÁÙ");
-		miHelp = new JMenuItem("µµ¿ò¸»º¸±â");
-		miInfo = new JMenuItem("¸Ş¸ğÀåÁ¤º¸");
+		mFile = new JMenu("íŒŒì¼(F)");
+		mEdit = new JMenu("í¸ì§‘(E)");
+		mOper = new JMenu("ì„œì‹(O)");
+		mView = new JMenu("ë³´ê¸°(V)");
+		mHelp = new JMenu("ë„ì›€ë§(H)");
+		miNew = new JMenuItem("ìƒˆë¡œë§Œë“¤ê¸°");
+		miOpen = new JMenuItem("ì—´ê¸°");
+		miDown = new JMenuItem("ì €ì¥");
+		miADown = new JMenuItem("ë‹¤ë¥¸ì´ë¦„ìœ¼ë¡œ ì €ì¥");
+		miPageset = new JMenuItem("í˜ì´ì§€ì„¤ì •");
+		miPrint = new JMenuItem("ì¸ì‡„");
+		miQuit = new JMenuItem("ëë‚´ê¸°");
+		miUndo = new JMenuItem("ì‹¤í–‰ì·¨ì†Œ");
+		miCut = new JMenuItem("ì˜ë¼ë‚´ê¸°");
+		miCopy = new JMenuItem("ë³µì‚¬");
+		miPaste = new JMenuItem("ë¶™ì—¬ë„£ê¸°");
+		miDel = new JMenuItem("ì‚­ì œ");
+		miFind = new JMenuItem("ì°¾ê¸°");
+		miNFind = new JMenuItem("ë‹¤ìŒì°¾ê¸°");
+		miChange = new JMenuItem("ë°”ê¾¸ê¸°");
+		miMove = new JMenuItem("ì´ë™");
+		miAlSel = new JMenuItem("ì „ì²´ì„ íƒ");
+		miDate = new JMenuItem("ì‹œê°„/ë‚ ì§œ");
+		miNextLine = new JMenuItem("ìë™ì¤„ë°”ê¿ˆ");
+		miGol = new JMenuItem("ê¸€ê¼´");
+		miState = new JMenuItem("ìƒíƒœí‘œì‹œì¤„");
+		miHelp = new JMenuItem("ë„ì›€ë§ë³´ê¸°");
+		miInfo = new JMenuItem("ë©”ëª¨ì¥ì •ë³´");
 		
 		setJMenuBar(mb);
 		tf = new JTextField();

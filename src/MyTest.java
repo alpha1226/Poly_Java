@@ -12,7 +12,7 @@ public class MyTest {
 }
 
 class Buttons extends JFrame{
-	JButton btn[]; //¹öÆ° ¹è¿­ ¼±¾ğ
+	JButton btn[]; //
 	
 	
 	
@@ -28,10 +28,11 @@ class Buttons extends JFrame{
 		setLayout(new GridLayout(0,3));
 		setSize(300,300);
 		setVisible(true);
-		setTitle("³»°¡¸¸µç¹öÆ°");
+		setTitle("ã…ã…ã…ã…ã…ã…");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 		
+
 }
 	
 	

@@ -14,9 +14,9 @@ public class MyFirstFrame01{
 		mf.display();
 	
 		
-/*		JFrame f = new JFrame("³»°¡¸¸µç ¼ÒÁ¦¸ñ");
+/*		JFrame f = new JFrame("ë‚´ê°€ë§Œë“  ì†Œì œëª©");
 
-		f.setTitle("µÎ¹øÂ°Ã¢Á¦¸ñ");
+		f.setTitle("ë‘ë²ˆì§¸ì°½ì œëª©");
 		
 		f.setSize(300, 300);
 		f.setVisible(true);
@@ -44,13 +44,13 @@ JButton btn;
 JButton btn2,btn3,btn4,btn5;
 
 	public MyFrame1() {
-		super("Á¦¸ñ");
+		super("ì œëª©");
 		// TODO Auto-generated constructor stub
-		btn = new JButton("1¹øÂ°");
-		btn2 = new JButton("2¹øÂ°");
-		btn3 = new JButton("3¹øÂ°");
-		btn4 = new JButton("4¹øÂ°");
-		btn5 = new JButton("5¹øÂ°");
+		btn = new JButton("1ë²ˆì§¸");
+		btn2 = new JButton("2ë²ˆì§¸");
+		btn3 = new JButton("3ë²ˆì§¸");
+		btn4 = new JButton("4ë²ˆì§¸");
+		btn5 = new JButton("5ë²ˆì§¸");
 		add(btn);
 		add(btn2);
 		add(btn3);
