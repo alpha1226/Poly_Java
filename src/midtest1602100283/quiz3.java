@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 
 public class quiz3 {
 	public static void main(String[] args) {
@@ -18,7 +17,7 @@ public class quiz3 {
 
 
 class myQuiz3 extends JFrame implements ActionListener {
-    JButton jb[] = null;
+    public  JButton jb[] = null;
     Font myfont;
     Color myColor;
     JPanel jp,jp2,jp3;
@@ -60,10 +59,13 @@ class myQuiz3 extends JFrame implements ActionListener {
         check = new JButton("check");
         check.setFont(myfont);
         check.addActionListener(this); jp3.add(check);
-        
-        
 
     }
+//액션퍼폼드 내부 함수 정의
+	void buttonToUp(int i) {
+
+	}
+	//----------------------------------------------------------------
     void display() {
         setLayout(new BorderLayout(5,5));
         add(jp2,BorderLayout.NORTH);
@@ -72,7 +74,8 @@ class myQuiz3 extends JFrame implements ActionListener {
         setSize(500, 500);
         setVisible(true);
         setResizable(false);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -351,10 +354,13 @@ class myQuiz3 extends JFrame implements ActionListener {
     			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
     		}
     	}
+
 //---------------------------------------------------------------------------
-		
     	
     }
+
+
+
 
 
 
