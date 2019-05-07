@@ -1,23 +1,10 @@
 package midtest1602100283;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.MediaTracker;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 public class quiz3 {
 	public static void main(String[] args) {
@@ -36,13 +23,9 @@ class myQuiz3 extends JFrame implements ActionListener {
     Color myColor;
     JPanel jp,jp2,jp3;
     JButton reset,check;
-    Image original;
-    BufferedImage img[];
     JLabel jl,jl2;
     JLabel jlTime,jlMove;
     long beforeTime = System.currentTimeMillis();
-    int row=5, col=5;
-    int width,height;
     long afterTime;
     
     
@@ -362,14 +345,14 @@ class myQuiz3 extends JFrame implements ActionListener {
     			jb[23].setText("");
     			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
     		}
-    		if(e.getSource()==jb[20]) {
-    			jb[25].setText(jb[20].getText());
-    			jb[20].setText("");
+    		if(e.getSource()==jb[19]) {
+    			jb[24].setText(jb[19].getText());
+    			jb[19].setText("");
     			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
     		}
     	}
 //---------------------------------------------------------------------------
-    	
+
     	
     }
     public static int[] shuffle(int[] arr){

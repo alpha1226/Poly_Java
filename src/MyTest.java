@@ -6,17 +6,17 @@ import javax.swing.JFrame;
 
 public class MyTest {
 	public static void main(String[] args) {
-		Buttons btns = new Buttons();
+		Buttons2 btns = new Buttons2();
 		btns.display();
 	}
 }
 
-class Buttons extends JFrame{
+class Buttons2 extends JFrame{
 	JButton btn[]; //
 	
 	
 	
-	Buttons(){
+	Buttons2(){
 		btn= new JButton[10];
 		for(int i=0;i<10;i++) {
 			btn[i]=new JButton(""+i);
@@ -28,7 +28,7 @@ class Buttons extends JFrame{
 		setLayout(new GridLayout(0,3));
 		setSize(300,300);
 		setVisible(true);
-		setTitle("ㅁㅁㅁㅁㅁㅁ");
+		setTitle("alpha");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 		
