@@ -17,23 +17,26 @@ public class quiz3 {
 
 
 class myQuiz3 extends JFrame implements ActionListener {
-    public  JButton jb[] = null;
-    Font myfont;
-    Color myColor;
-    JPanel jp,jp2,jp3;
-    JButton reset,check;
-    JLabel jl,jl2;
-    JLabel jlTime,jlMove;
-    long beforeTime = System.currentTimeMillis();
-    long afterTime;
-    
-    
-    
-    
-    
-    myQuiz3() {
-        jb = new JButton[25];
-        jp = new JPanel(new GridLayout(5,5));
+	public  JButton jb[] = null;
+	Font myfont;
+	Color myColor;
+	JPanel jp,jp2,jp3;
+	JPanel alljp, photojp;
+	JButton reset,check;
+	JLabel jl,jl2;
+	JLabel jlTime,jlMove;
+	long beforeTime = System.currentTimeMillis();
+	long afterTime;
+
+
+
+
+
+	myQuiz3() {
+		alljp = new JPanel(new GridLayout(1,2));
+		photojp = new JPanel(new FlowLayout()); alljp.add(photojp);
+		jb = new JButton[25];
+		jp = new JPanel(new GridLayout(5,5)); alljp.add(jp);
         jp2 = new JPanel(new GridLayout(1,4));
         jp3 = new JPanel(new GridLayout(1,2));
         jl = new JLabel("이동횟수"); jl.setText("이동횟수"); jp2.add(jl);
@@ -63,7 +66,24 @@ class myQuiz3 extends JFrame implements ActionListener {
     }
 //액션퍼폼드 내부 함수 정의
 	void buttonToUp(int i) {
-
+		jb[i].setText(jb[i+5].getText());
+		jb[i+5].setText("");
+		jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
+	}
+	void buttonToDown(int i){
+		jb[i].setText(jb[i-5].getText());
+		jb[i-5].setText("");
+		jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
+	}
+	void buttonToRight(int i){
+		jb[i].setText(jb[i+1].getText());
+		jb[i+1].setText("");
+		jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
+	}
+	void buttonToLeft(int i){
+		jb[i].setText(jb[i-1].getText());
+		jb[i-1].setText("");
+		jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
 	}
 	//----------------------------------------------------------------
     void display() {
@@ -108,261 +128,33 @@ class myQuiz3 extends JFrame implements ActionListener {
     			JOptionPane.showMessageDialog(null, "성공하셧습니다\n이동횟수 : "+jlMove.getText()+"     시간 : "+((afterTime - beforeTime)/1000));
     		}
     	}
-    	
-    	
-    	
-    	
-    	
 
-//---------------------------------------------------------------
-//중앙 구현부
-    	for(int i=6;i<=8;i++) {
-    		if(jb[i].getText().equals("")) {
-    			if(e.getSource()==jb[i+1]) {
-        			jb[i].setText(jb[i+1].getText());
-        			jb[i+1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i-1]) {
-        			jb[i].setText(jb[i-1].getText());
-        			jb[i-1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i-5]) {
-        			jb[i].setText(jb[i-5].getText());
-        			jb[i-5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i+5]) {
-        			jb[i].setText(jb[i+5].getText());
-        			jb[i+5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        	}
-    	}
-    	
-    	for(int i=11;i<=13;i++) {
-    		if(jb[i].getText().equals("")) {
-    			if(e.getSource()==jb[i+1]) {
-        			jb[i].setText(jb[i+1].getText());
-        			jb[i+1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i-1]) {
-        			jb[i].setText(jb[i-1].getText());
-        			jb[i-1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i-5]) {
-        			jb[i].setText(jb[i-5].getText());
-        			jb[i-5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i+5]) {
-        			jb[i].setText(jb[i+5].getText());
-        			jb[i+5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        	}
-    	}
-    	
-    	for(int i=16;i<=18;i++) {
-    		if(jb[i].getText().equals("")) {
-    			if(e.getSource()==jb[i+1]) {
-        			jb[i].setText(jb[i+1].getText());
-        			jb[i+1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i-1]) {
-        			jb[i].setText(jb[i-1].getText());
-        			jb[i-1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i-5]) {
-        			jb[i].setText(jb[i-5].getText());
-        			jb[i-5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i+5]) {
-        			jb[i].setText(jb[i+5].getText());
-        			jb[i+5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        	}
-    	}
-//중앙구현부
-//---------------------------------------------------------------------------
-    	
-    	
-    	
-    	
-//오른쪽 위 구석
-    	
-    	if(jb[4].getText().equals("")) {
-    		if(e.getSource()==jb[3]) {
-    			jb[4].setText(jb[3].getText());
-    			jb[3].setText("");
-    			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-    		}
-    		if(e.getSource()==jb[9]) {
-    			jb[4].setText(jb[9].getText());
-    			jb[9].setText("");
-    			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-    		}
-    	}
-//---------------------------------------------------------------------------
 
-    	
-//오른쪽 부분
+    	String command = e.getActionCommand();
+    	int commandInt= Integer.parseInt(command);
+		System.out.println(commandInt);
+		for(int i=0;i<jb.length;i++){
+			System.out.print(i);
+		}
+		System.out.println("");
 
-    	for(int i=9;i<20;i=i+5) {
-    		if(jb[i].getText().equals("")) {
-        		if(e.getSource()==jb[i-1]) {
-        			jb[i].setText(jb[i-1].getText());
-        			jb[i-1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i-5]) {
-        			jb[i].setText(jb[i-5].getText());
-        			jb[i-5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i+5]) {
-        			jb[i].setText(jb[i+5].getText());
-        			jb[i+5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        	}
-    	}
-//---------------------------------------------------------------------------
 
-    	
-//위쪽
-    	for(int i=1;i<4;i++) {
-    		if(jb[i].getText().equals("")) {
-        		if(e.getSource()==jb[i-1]) {
-        			jb[i].setText(jb[i-1].getText());
-        			jb[i-1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i+1]) {
-        			jb[i].setText(jb[i+1].getText());
-        			jb[i+1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i+5]) {
-        			jb[i].setText(jb[i+5].getText());
-        			jb[i+5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        	}
-    	}
-//---------------------------------------------------------------------------
-    	
-//왼쪽 위
-    	if(jb[0].getText().equals("")) {
-    		if(e.getSource()==jb[1]) {
-    			jb[0].setText(jb[1].getText());
-    			jb[1].setText("");
-    			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-    		}
-    		if(e.getSource()==jb[5]) {
-    			jb[0].setText(jb[5].getText());
-    			jb[5].setText("");
-    			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-    		}
-    	}
-//---------------------------------------------------------------------------
-    	
-    	
-    	
-    	
-    	
-//왼쪽벽	
-    	for(int i=5;i<17;i=i+5) {
-    		if(jb[i].getText().equals("")) {
-        		if(e.getSource()==jb[i+5]) {
-        			jb[i].setText(jb[i+5].getText());
-        			jb[i+5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i+1]) {
-        			jb[i].setText(jb[i+1].getText());
-        			jb[i+1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i-5]) {
-        			jb[i].setText(jb[i-5].getText());
-        			jb[i-5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        	}
-    		
-    	}
-//--------------------------------------------------------------------------
-    	
-    	
-//왼쪽 밑
-    	if(jb[20].getText().equals("")) {
-    		if(e.getSource()==jb[21]) {
-    			jb[20].setText(jb[21].getText());
-    			jb[21].setText("");
-    			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-    		}
-    		if(e.getSource()==jb[15]) {
-    			jb[20].setText(jb[15].getText());
-    			jb[15].setText("");
-    			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-    		}
-    	}
-//---------------------------------------------------------------------------
-    	
-    	
-//밑부분
-    	for(int i=21;i<24;i++) {
-    		if(jb[i].getText().equals("")) {
-        		if(e.getSource()==jb[i-1]) {
-        			jb[i].setText(jb[i-1].getText());
-        			jb[i-1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i+1]) {
-        			jb[i].setText(jb[i+1].getText());
-        			jb[i+1].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        		if(e.getSource()==jb[i-5]) {
-        			jb[i].setText(jb[i-5].getText());
-        			jb[i-5].setText("");
-        			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-        		}
-        	}
-    		
-    	}
-//--------------------------------------------------------------------------
-    	
-//오른쪽밑
-    	if(jb[24].getText().equals("")) {
-    		if(e.getSource()==jb[23]) {
-    			jb[24].setText(jb[23].getText());
-    			jb[23].setText("");
-    			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-    		}
-    		if(e.getSource()==jb[19]) {
-    			jb[24].setText(jb[19].getText());
-    			jb[19].setText("");
-    			jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
-    		}
-    	}
+		//버튼 구현부
+    	for(int i=0;i<=jb.length;i++) {
+			if(jb[i].getText().equals("")){
+				System.out.println("NUll"+i);
+				if(i>=5){
+					if(e.getSource()==jb[i-5]) {System.out.println(e.getSource()); buttonToDown(i);}
+				}
+				if(i<=jb.length-5){
+					if(e.getSource()==jb[i+5]) {System.out.println(e.getSource()); buttonToUp(i);}
+				}
 
-//---------------------------------------------------------------------------
-    	
+				if(i%5!=0) if(e.getSource()==jb[i-1]) {buttonToLeft(i);}
+				if(i%5!=4) if(e.getSource()==jb[i+1]) {buttonToRight(i);}
+			}
+		}
     }
-
-
-
-
-
 
     public static int[] shuffle(int[] arr){
     	for(int x=0;x<arr.length;x++){
