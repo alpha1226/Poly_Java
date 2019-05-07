@@ -352,9 +352,12 @@ class myQuiz3 extends JFrame implements ActionListener {
     		}
     	}
 //---------------------------------------------------------------------------
-
+		
     	
     }
+
+
+
     public static int[] shuffle(int[] arr){
     	for(int x=0;x<arr.length;x++){
           int i = (int)(Math.random()*arr.length);
