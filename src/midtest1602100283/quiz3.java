@@ -60,6 +60,7 @@ class myQuiz3 extends JFrame implements ActionListener {
             jp.add(jb[i]);
         }
         jb[24].setText("");
+        jb[24].setIcon(null);
         reset = new JButton("reset");
         reset.setFont(myfont);
         reset.addActionListener(this);
@@ -120,11 +121,11 @@ class myQuiz3 extends JFrame implements ActionListener {
     		
     		for(int i=0;i<num.length;i++) {
     			if(rannum[i]==0) {
-    				//jb[i].setText("");
+    				jb[i].setText("");
     				jb[i].setIcon(null);
     			} else {
-    				//jb[i].setText(String.valueOf(rannum[i]));
-    				jb[i].setIcon(new ImageIcon(Class.class.getResource("/Images"+i+".gif")));
+    				jb[i].setText(String.valueOf(rannum[i]));
+    				jb[i].setIcon(new ImageIcon(Class.class.getResource("/Images"+rannum[i]+".gif")));
     			}
     		}
     	}
@@ -146,13 +147,14 @@ class myQuiz3 extends JFrame implements ActionListener {
     	}
 
 
-    	String command = e.getActionCommand();
+    /*	String command = e.getActionCommand();
+    	System.out.println(command);
     	int commandInt= Integer.parseInt(command);
 		System.out.println(commandInt);
 		for(int i=0;i<jb.length;i++){
 			System.out.print(i);
 		}
-		System.out.println("");
+		System.out.println("");*/
 
 
 		//버튼 구현부
@@ -170,15 +172,15 @@ class myQuiz3 extends JFrame implements ActionListener {
 				if(i%5!=4) if(e.getSource()==jb[i+1]) {buttonToRight(i);}
 			}
 		}*/
-    	
+		//버튼 구현부
     	for(int i=0;i<jb.length;i++) {
 			if(jb[i].getIcon()==null){
 				System.out.println("NUll"+i);
 				if(i>=5){
-					if(e.getSource()==jb[i-5]) {System.out.println(e.getSource()); buttonToDown(i);}
+					if(e.getSource()==jb[i-5]) {buttonToDown(i);}
 				}
-				if(i<=jb.length-5){
-					if(e.getSource()==jb[i+5]) {System.out.println(e.getSource()); buttonToUp(i);}
+				if(i<jb.length-5){
+					if(e.getSource()==jb[i+5]) {buttonToUp(i);}
 				}
 
 				if(i%5!=0) if(e.getSource()==jb[i-1]) {buttonToLeft(i);}
