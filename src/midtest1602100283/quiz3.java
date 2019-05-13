@@ -1,6 +1,5 @@
 package midtest1602100283;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,10 +12,6 @@ public class quiz3 {
 	}	
 }
 
-
-
-
-
 class myQuiz3 extends JFrame implements ActionListener {
 	public  JButton jb[] = null;
 	Font myfont;
@@ -28,10 +23,6 @@ class myQuiz3 extends JFrame implements ActionListener {
 	JLabel jlTime,jlMove;
 	long beforeTime = System.currentTimeMillis();
 	long afterTime;
-
-
-
-
 
 	myQuiz3() {
 		alljp = new JPanel(new GridLayout(1,2));
@@ -147,31 +138,6 @@ class myQuiz3 extends JFrame implements ActionListener {
     	}
 
 
-    /*	String command = e.getActionCommand();
-    	System.out.println(command);
-    	int commandInt= Integer.parseInt(command);
-		System.out.println(commandInt);
-		for(int i=0;i<jb.length;i++){
-			System.out.print(i);
-		}
-		System.out.println("");*/
-
-
-		//버튼 구현부
-    	/*for(int i=0;i<jb.length;i++) {
-			if(jb[i].getText().equals("")){
-				System.out.println("NUll"+i);
-				if(i>=5){
-					if(e.getSource()==jb[i-5]) {System.out.println(e.getSource()); buttonToDown(i);}
-				}
-				if(i<=jb.length-5){
-					if(e.getSource()==jb[i+5]) {System.out.println(e.getSource()); buttonToUp(i);}
-				}
-
-				if(i%5!=0) if(e.getSource()==jb[i-1]) {buttonToLeft(i);}
-				if(i%5!=4) if(e.getSource()==jb[i+1]) {buttonToRight(i);}
-			}
-		}*/
 		//버튼 구현부
     	for(int i=0;i<jb.length;i++) {
 			if(jb[i].getIcon()==null){
