@@ -1,5 +1,6 @@
 package midtest1602100283;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -47,6 +48,11 @@ class myQuiz3 extends JFrame implements ActionListener {
         myColor = new Color(255,255,0);
         for(int i = 0; i < jb.length; i++){
             jb[i] = new JButton(""+(i+1));
+            try {
+            jb[i].setIcon(new ImageIcon(Class.class.getResource("/Images"+(i+1)+".gif")));
+            } catch(Exception e) {
+            	System.out.println(e);
+            }
             jb[i].setFont(myfont);
             jb[i].addActionListener(this);
             jb[i].setBackground(myColor);
@@ -68,21 +74,29 @@ class myQuiz3 extends JFrame implements ActionListener {
 	void buttonToUp(int i) {
 		jb[i].setText(jb[i+5].getText());
 		jb[i+5].setText("");
+		jb[i].setIcon(jb[i+5].getIcon());
+		jb[i+5].setIcon(null);
 		jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
 	}
 	void buttonToDown(int i){
 		jb[i].setText(jb[i-5].getText());
 		jb[i-5].setText("");
+		jb[i].setIcon(jb[i-5].getIcon());
+		jb[i-5].setIcon(null);
 		jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
 	}
 	void buttonToRight(int i){
 		jb[i].setText(jb[i+1].getText());
 		jb[i+1].setText("");
+		jb[i].setIcon(jb[i+1].getIcon());
+		jb[i+1].setIcon(null);
 		jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
 	}
 	void buttonToLeft(int i){
 		jb[i].setText(jb[i-1].getText());
 		jb[i-1].setText("");
+		jb[i].setIcon(jb[i-1].getIcon());
+		jb[i-1].setIcon(null);
 		jlMove.setText(String.valueOf(Integer.parseInt(jlMove.getText())+1));
 	}
 	//----------------------------------------------------------------
@@ -106,9 +120,11 @@ class myQuiz3 extends JFrame implements ActionListener {
     		
     		for(int i=0;i<num.length;i++) {
     			if(rannum[i]==0) {
-    				jb[i].setText("");
+    				//jb[i].setText("");
+    				jb[i].setIcon(null);
     			} else {
-    				jb[i].setText(String.valueOf(rannum[i]));
+    				//jb[i].setText(String.valueOf(rannum[i]));
+    				jb[i].setIcon(new ImageIcon(Class.class.getResource("/Images"+i+".gif")));
     			}
     		}
     	}
@@ -140,8 +156,23 @@ class myQuiz3 extends JFrame implements ActionListener {
 
 
 		//버튼 구현부
-    	for(int i=0;i<=jb.length;i++) {
+    	/*for(int i=0;i<jb.length;i++) {
 			if(jb[i].getText().equals("")){
+				System.out.println("NUll"+i);
+				if(i>=5){
+					if(e.getSource()==jb[i-5]) {System.out.println(e.getSource()); buttonToDown(i);}
+				}
+				if(i<=jb.length-5){
+					if(e.getSource()==jb[i+5]) {System.out.println(e.getSource()); buttonToUp(i);}
+				}
+
+				if(i%5!=0) if(e.getSource()==jb[i-1]) {buttonToLeft(i);}
+				if(i%5!=4) if(e.getSource()==jb[i+1]) {buttonToRight(i);}
+			}
+		}*/
+    	
+    	for(int i=0;i<jb.length;i++) {
+			if(jb[i].getIcon()==null){
 				System.out.println("NUll"+i);
 				if(i>=5){
 					if(e.getSource()==jb[i-5]) {System.out.println(e.getSource()); buttonToDown(i);}
