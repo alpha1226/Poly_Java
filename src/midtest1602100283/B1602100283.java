@@ -1,28 +1,16 @@
 package midtest1602100283;
 
-import java.awt.Canvas;
-import java.awt.Color;
 import java.awt.FileDialog;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 
 
@@ -47,8 +35,8 @@ class Menu01 extends JFrame{
 	JDialog dialog;
 
 	JTextArea ta;
-	FileDialog open,save; 
-	
+	FileDialog open,save;
+
 	JFrame jf;
 	
 	Menu01(){
@@ -199,6 +187,8 @@ class Menu01 extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("MyMenu01");
 	}
+
+
 }
 
 
