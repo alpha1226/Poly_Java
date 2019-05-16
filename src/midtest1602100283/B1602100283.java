@@ -4,6 +4,10 @@ import java.awt.FileDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -24,7 +28,7 @@ public class B1602100283 {
 
 
 
-class Menu01 extends JFrame{
+class Menu01 extends JFrame {
 	JMenuBar mb;
 	JMenu mFile,mNotice,mAdd;
 	JMenuItem miNew,miOpen,miSave,miQuit;
@@ -65,7 +69,21 @@ class Menu01 extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				ta.setText("");
 				open.setVisible(true);
+				String txt = open.getDirectory()+open.getFile();
+				String str=null;
+				try {
+					FileInputStream fis = new FileInputStream(txt);
+					while(true) {
+						int a = fis.read();
+						if(a == -1) break;
+						str += (char)a;
+					}
+				} catch (IOException ie){
+					ie.printStackTrace();
+				}
+				ta.append(str);
 			}
 		});
 		
@@ -76,6 +94,19 @@ class Menu01 extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				save.setVisible(true);
+				String temp = ta.getText();
+				char ctemp[] = temp.toCharArray();
+				String path = save.getDirectory()+save.getFile();
+				try {
+					FileOutputStream fos = new FileOutputStream(path);
+					DataOutputStream dos = new DataOutputStream(fos);
+					for(int i=0;i<ctemp.length;i++){
+						dos.write(ctemp[i]);
+					}
+				}catch(IOException ie){
+					ie.printStackTrace();
+				}
+
 			}
 		});
 		
